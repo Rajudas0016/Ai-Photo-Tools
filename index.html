@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Photo Editor</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.18.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/body-pix@2.0.5"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>📷 AI Photo Editor</h1>
+        
+        <div class="upload-section">
+            <div class="upload-box" id="dropZone">
+                <input type="file" id="fileInput" accept="image/*">
+                <label for="fileInput" class="upload-btn">
+                    📤 Upload Photo
+                </label>
+                <p id="statusText">No image selected</p>
+            </div>
+        </div>
+
+        <div class="editor-area">
+            <canvas id="photoCanvas"></canvas>
+            
+            <div class="controls">
+                <div class="ai-tools">
+                    <button onclick="autoEnhance()">✨ Auto Enhance</button>
+                    <button onclick="applyPortraitBlur()">👤 Portrait Blur</button>
+                </div>
+
+                <div class="adjustments">
+                    <div class="slider">
+                        <label>☀️ Brightness</label>
+                        <input type="range" id="brightness" min="-50" max="50" value="0">
+                        <span class="value">0%</span>
+                    </div>
+                    <div class="slider">
+                        <label>🌈 Contrast</label>
+                        <input type="range" id="contrast" min="-50" max="50" value="0">
+                        <span class="value">0%</span>
+                    </div>
+                </div>
+
+                <button class="download-btn" onclick="savePhoto()">
+                    💾 Download Image
+                </button>
+            </div>
+        </div>
+
+        <div id="loading" class="loading-overlay">
+            <div class="loader"></div>
+            <p>Processing AI Magic...</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
