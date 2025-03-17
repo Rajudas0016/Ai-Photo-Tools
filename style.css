@@ -1,1 +1,180 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #0a0a0a;
+    color: #fff;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin: 30px 0;
+    font-size: 2.5em;
+    color: #00ff88;
+    text-shadow: 0 0 10px rgba(0,255,136,0.3);
+}
+
+.upload-section {
+    margin: 40px 0;
+}
+
+.upload-box {
+    border: 2px dashed #333;
+    border-radius: 15px;
+    padding: 40px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.upload-box:hover {
+    border-color: #00ff88;
+    background: rgba(0,255,136,0.05);
+}
+
+.upload-btn {
+    background: #00ff88;
+    color: #000;
+    padding: 15px 30px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    display: inline-block;
+    margin: 20px 0;
+    transition: transform 0.2s;
+}
+
+.upload-btn:hover {
+    transform: scale(1.05);
+}
+
+#statusText {
+    color: #666;
+    font-size: 0.9em;
+}
+
+.editor-area {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+#mainCanvas {
+    background: #1a1a1a;
+    border-radius: 12px;
+    border: 2px solid #333;
+    max-width: 100%;
+}
+
+.controls {
+    background: #1a1a1a;
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid #333;
+}
+
+.ai-tools {
+    display: grid;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+button {
+    background: #252525;
+    color: #fff;
+    border: none;
+    padding: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+button:hover {
+    background: #333;
+    box-shadow: 0 0 15px rgba(0,255,136,0.2);
+}
+
+.slider {
+    margin-bottom: 25px;
+}
+
+.slider label {
+    display: block;
+    margin-bottom: 10px;
+    color: #00ff88;
+}
+
+input[type="range"] {
+    width: 100%;
+    height: 8px;
+    background: #333;
+    border-radius: 4px;
+    outline: none;
+    -webkit-appearance: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #00ff88;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.download-btn {
+    background: #00ff88;
+    color: #000;
+    width: 100%;
+    padding: 18px;
+    font-weight: bold;
+    margin-top: 25px;
+    border: 2px solid transparent;
+}
+
+.download-btn:hover {
+    border-color: #fff;
+}
+
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1000;
+}
+
+.loader {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #333;
+    border-top-color: #00ff88;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
