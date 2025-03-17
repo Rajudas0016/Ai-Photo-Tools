@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>📷 AI Photo Editor</h1>
+        <h1>🎨 AI Photo Editor</h1>
         
         <div class="upload-section">
             <div class="upload-box" id="dropZone">
@@ -23,28 +23,27 @@
         </div>
 
         <div class="editor-area">
-            <canvas id="photoCanvas"></canvas>
+            <canvas id="mainCanvas"></canvas>
             
             <div class="controls">
                 <div class="ai-tools">
                     <button onclick="autoEnhance()">✨ Auto Enhance</button>
-                    <button onclick="applyPortraitBlur()">👤 Portrait Blur</button>
+                    <button onclick="applyPortraitEffect()">👤 Portrait Blur</button>
+                    <button onclick="applyEdgeDetection()">🔍 Edge Detect</button>
                 </div>
 
                 <div class="adjustments">
                     <div class="slider">
                         <label>☀️ Brightness</label>
                         <input type="range" id="brightness" min="-50" max="50" value="0">
-                        <span class="value">0%</span>
                     </div>
                     <div class="slider">
                         <label>🌈 Contrast</label>
                         <input type="range" id="contrast" min="-50" max="50" value="0">
-                        <span class="value">0%</span>
                     </div>
                 </div>
 
-                <button class="download-btn" onclick="savePhoto()">
+                <button class="download-btn" onclick="saveImage()">
                     💾 Download Image
                 </button>
             </div>
@@ -52,7 +51,7 @@
 
         <div id="loading" class="loading-overlay">
             <div class="loader"></div>
-            <p>Processing AI Magic...</p>
+            <p>Applying AI Magic...</p>
         </div>
     </div>
 
